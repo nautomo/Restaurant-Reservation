@@ -1,0 +1,44 @@
+#reserve-form {
+    width: 300px;           /* width of column */
+    margin: 0 auto;         /* centers the column */
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* shifts contents left */
+}
+
+#select-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+#select-section > .inputlabel-pair {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.MuiInputLabel-root {
+    text-align: left;
+}
+
+#submit-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 10px;
+}
+
+/* TODO: set text to missing required to red after attempt to submit empty */
+.calendar-wrapper.error {
+    border: 1px solid red;
+    border-radius: 4px;
+}
+
+/* Helper text already handled by MUI with 'error' prop */
+.MuiFormHelperText-root.Mui-error {
+    color: red;
+}
