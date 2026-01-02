@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "nautomo.github.io/Restaurant-Reservation/",
+  "homepage": "https://nautomo.github.io/Restaurant-Reservation/",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
