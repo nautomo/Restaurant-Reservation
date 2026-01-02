@@ -39,7 +39,7 @@ function Reservation() {
     };
 
     return (
-        <Box component="form" id="reserve-form" onSubmit={handleSubmit}>
+        <Box component="form" id="reserve-form" onSubmit={handleSubmit} noValidate>
             <div className="inputlabel-pair" id="name-section">
                 <InputLabel id="name-for-reservation-label">Full Name*</InputLabel>
                 <TextField 
@@ -54,16 +54,12 @@ function Reservation() {
                 />
             </div>
             <div className="inputlabel-pair" id="date-section">
-                <InputLabel>Date*</InputLabel>
-                    <LocalizationProvider dateAdapter={AdapterDayjs}>
-                        <div className={`calendar-wrapper ${submitted && !date ? 'error' : ''}`}>
-                        <DateCalendar 
-                            value={date} 
-                            onChange={(newValue) => setDate(newValue)}
-                        />
-                    </div>
-                    </LocalizationProvider>
-                    {submitted && !date && (<FormHelperText error>Missing required</FormHelperText>)}
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <DateCalendar 
+                        value={date} 
+                        onChange={(newValue) => setDate(newValue)}
+                    />
+                </LocalizationProvider>
             </div>
             <div id="select-section">
                 <div className="inputlabel-pair">
@@ -82,7 +78,7 @@ function Reservation() {
                     <MenuItem value={3}>3</MenuItem>
                     <MenuItem value={4}>4</MenuItem>
                 </Select>
-                {submitted && !numPeople && (<FormHelperText>Missing required</FormHelperText>)}
+                {submitted && !numPeople && (<FormHelperText error>Missing required</FormHelperText>)}
                 </div>
                 
                 <div className="inputlabel-pair">
@@ -101,7 +97,7 @@ function Reservation() {
                     <MenuItem value={13}>1:00</MenuItem>
                     <MenuItem value={14}>2:00</MenuItem>
                 </Select>
-                {submitted && !time && (<FormHelperText>Missing required</FormHelperText>)}
+                {submitted && !time && (<FormHelperText error>Missing required</FormHelperText>)}
                 </div>
             </div>
             
