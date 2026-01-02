@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/nautomo.github.io/Restaurant-Reservation/static/css/main.eeedd80c.css",
+    "main.js": "/nautomo.github.io/Restaurant-Reservation/static/js/main.b09e6aae.js",
+    "static/js/453.fd2f0c4a.chunk.js": "/nautomo.github.io/Restaurant-Reservation/static/js/453.fd2f0c4a.chunk.js",
+    "index.html": "/nautomo.github.io/Restaurant-Reservation/index.html",
+    "main.eeedd80c.css.map": "/nautomo.github.io/Restaurant-Reservation/static/css/main.eeedd80c.css.map",
+    "main.b09e6aae.js.map": "/nautomo.github.io/Restaurant-Reservation/static/js/main.b09e6aae.js.map",
+    "453.fd2f0c4a.chunk.js.map": "/nautomo.github.io/Restaurant-Reservation/static/js/453.fd2f0c4a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eeedd80c.css",
+    "static/js/main.b09e6aae.js"
+  ]
+}
