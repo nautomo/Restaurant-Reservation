@@ -8,6 +8,7 @@ import './Reservation.css'
 
 function Reservation() {
     const [name, setName] = React.useState('');
+    const [email, setEmail] = React.useState('');
     const [date, setDate] = React.useState(dayjs());
     const [numPeople, setNumPeople] = React.useState('');
     const [time, setTime] = React.useState('');
@@ -18,7 +19,7 @@ function Reservation() {
         setSubmitted(true)
 
         // manual validation check
-        if (!name || !date || !numPeople || !time) {
+        if (!name || !email || !date || !numPeople || !time) {
             return;
         }
 
@@ -32,6 +33,7 @@ function Reservation() {
 
         // reset variables
         setName('')
+        setEmail('')
         setDate(dayjs())
         setNumPeople('')
         setTime('')
@@ -52,11 +54,24 @@ function Reservation() {
                     error={submitted && !name}
                     required
                 />
+                <InputLabel id="email-for-reservation-label">Email*</InputLabel>
+                <TextField 
+                    labelId="email-for-reservation-label"
+                    id="email-for-reservation" 
+                    variant="standard" 
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    helperText={submitted && !email ? "Missing required" : ""}
+                    error={submitted && !email}
+                    required
+                />
             </div>
             <div className="inputlabel-pair" id="date-section">
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DateCalendar 
                         value={date} 
+                        disablePast
+                        //TODO: shouldDisableDate={/* disable dates where all time slots are booked */}
                         onChange={(newValue) => setDate(newValue)}
                     />
                 </LocalizationProvider>
@@ -92,15 +107,17 @@ function Reservation() {
                     error={submitted && !time}
                     required
                 >
-                    <MenuItem value={11}>11:00</MenuItem>
-                    <MenuItem value={12}>12:00</MenuItem>
-                    <MenuItem value={13}>1:00</MenuItem>
-                    <MenuItem value={14}>2:00</MenuItem>
+                    <MenuItem value={6}>6:00 PM</MenuItem>
+                    <MenuItem value={7}>7:00 PM</MenuItem>
+                    <MenuItem value={8}>8:00 PM</MenuItem>
+                    <MenuItem value={9}>9:00 PM</MenuItem>
                 </Select>
                 {submitted && !time && (<FormHelperText error>Missing required</FormHelperText>)}
                 </div>
             </div>
             
+            {/* TODO: preview reservation details */}
+            {/* TODO: store submitted details to block fully booked days */}
             <div id="submit-section">
                 <Button 
                 variant="contained" 

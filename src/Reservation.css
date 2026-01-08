@@ -32,12 +32,6 @@
     padding-top: 10px;
 }
 
-/* TODO: set text to missing required to red after attempt to submit empty */
-.calendar-wrapper.error {
-    border: 1px solid red;
-    border-radius: 4px;
-}
-
 /* Helper text already handled by MUI with 'error' prop */
 .MuiFormHelperText-root.Mui-error {
     color: red;
